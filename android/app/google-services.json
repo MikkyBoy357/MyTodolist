@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "834724914934",
+    "project_id": "mytodolist-eb9dd",
+    "storage_bucket": "mytodolist-eb9dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:834724914934:android:ce6c4e70172cd6dc39aed7",
+        "android_client_info": {
+          "package_name": "com.smakos.mytodolist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "834724914934-64libadriih4d8kh8e7b17o0dni3msbj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOdPBHWQcmsegT-FHoLuC_q8NJAdlRpVM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "834724914934-64libadriih4d8kh8e7b17o0dni3msbj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "834724914934-m26g6na6s134c9ros1o5sjrlbdghp4qv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.smakos.mytodolist"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
