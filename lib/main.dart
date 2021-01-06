@@ -1,19 +1,28 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:mytodolist/todo_view_model.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: Brightness.light,
-        primaryColor: Colors.blue,
-        accentColor: Colors.orange,
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => TodoViewModel(),
+        ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          brightness: Brightness.light,
+          primaryColor: Colors.blue,
+          accentColor: Colors.orange,
+        ),
+        home: MyApp(),
       ),
-      home: MyApp(),
     ),
   );
 }
@@ -52,6 +61,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    TodoViewModel viewModel = Provider.of<TodoViewModel>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text('My Todos'),
@@ -119,9 +129,10 @@ class _MyAppState extends State<MyApp> {
                         color: Colors.red,
                       ),
                       onPressed: () {
-                        setState(() {
-                          deleteTodos(documentSnapshot["todoTitle"]);
-                        });
+                        viewModel.delete(documentSnapshot["todoTitle"]);
+                        // setState(() {
+                        //   deleteTodos(documentSnapshot["todoTitle"]);
+                        // });
                       },
                     ),
                   ),
